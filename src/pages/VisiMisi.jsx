@@ -22,8 +22,7 @@ export default function VisiMisi() {
                 <h2 className="text-xl font-heading font-bold text-primary-900">Visi</h2>
               </div>
               <p className="text-slate-600 leading-relaxed italic">
-                "Terwujudnya Bapas Kelas II Sintang yang profesional, bersih, dan terpercaya
-                dalam memberikan pelayanan bimbingan kemasyarakatan."
+                "Terwujudnya Penegakan Hukum dan Pelayanan Keimigrasian serta Pemasyarakatan yang Modern, Berintegritas, dan Berkeadilan guna Mendukung Keamanan Nasional yang Tangguh Menuju Indonesia Emas 2045."
               </p>
             </div>
 
@@ -37,11 +36,10 @@ export default function VisiMisi() {
               </div>
               <ol className="space-y-3">
                 {[
-                  'Melaksanakan penelitian kemasyarakatan yang berkualitas dan akuntabel.',
-                  'Memberikan bimbingan kemasyarakatan yang efektif kepada klien.',
-                  'Meningkatkan kualitas sumber daya manusia aparatur.',
-                  'Mewujudkan tata kelola pemerintahan yang baik dan bersih.',
-                  'Meningkatkan kerjasama dengan instansi terkait dan masyarakat.',
+                  'Mewujudkan penegakan hukum dan pelayanan yang berintegritas, transparan, dan berkeadilan bagi Tahanan, Anak, dan Warga Binaan.',
+                  'Menyelenggarakan pembinaan, pembimbingan, dan reintegrasi sosial secara optimal dengan menjunjung tinggi prinsip kesamaan kedudukan di dalam hukum..',
+                  'Membangun tata kelola kelembagaan yang modern, profesional, terintegrasi, serta dapat dipertanggungjawabkan (akuntabel).',
+                  'Melaksanakan pengamanan, pengawasan, dan perawatan yang mengedepankan asas kemanusiaan, kemandirian, serta bebas dari tindakan diskriminatif.',
                 ].map((m, i) => (
                   <li key={i} className="flex gap-3 text-slate-600 text-sm leading-relaxed">
                     <span className="w-6 h-6 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">

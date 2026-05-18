@@ -16,6 +16,7 @@ import Galeri        from '@/pages/Galeri'
 import Unduhan       from '@/pages/Unduhan'
 import Kontak        from '@/pages/Kontak'
 import NotFound      from '@/pages/NotFound'
+import DetailLayanan from '@/pages/DetailLayanan'
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
             <Route path="visi-misi"     element={<VisiMisi />} />
             <Route path="struktur"      element={<StrukturOrg />} />
             <Route path="layanan"       element={<Layanan />} />
+            <Route path="layanan/:slug" element={<DetailLayanan />} />
             <Route path="berita"        element={<Berita />} />
             <Route path="berita/:slug"  element={<BeritaDetail />} />
             <Route path="galeri"        element={<Galeri />} />

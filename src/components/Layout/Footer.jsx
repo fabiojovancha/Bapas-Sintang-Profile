@@ -14,7 +14,11 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-                <Shield className="w-6 h-6 text-gold-400" />
+                <img
+                  src="/bapas_logo.png"
+                  alt="Logo Bapas Sintang"
+                  className="w-12 h-14 object-contain"
+                />
               </div>
               <div>
                 <p className="font-heading font-bold text-sm">Bapas Kelas II</p>
@@ -26,7 +30,7 @@ export default function Footer() {
               bimbingan kemasyarakatan dan pengawasan klien pemasyarakatan.
             </p>
             <p className="text-xs text-primary-400">
-              Di bawah Kementerian Hukum dan HAM RI<br />
+              Di bawah Kementerian Imigrasi dan Pemasyarakatan<br />
               Kanwil Kalimantan Barat
             </p>
           </div>
@@ -45,7 +49,6 @@ export default function Footer() {
                 { label: 'Layanan',           to: '/layanan' },
                 { label: 'Berita & Info',     to: '/berita' },
                 { label: 'Galeri',            to: '/galeri' },
-                { label: 'Unduhan',           to: '/unduhan' },
               ].map((item) => (
                 <li key={item.to}>
                   <Link
@@ -59,24 +62,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Kolom 3 - Layanan */}
+{/* Kolom 3 - Layanan (SUDAH AKTIF ROUTINGNYA) */}
           <div>
             <h4 className="font-heading font-bold text-sm uppercase tracking-widest text-gold-400 mb-5">
               Layanan Kami
             </h4>
             <ul className="space-y-2.5">
               {[
-                'Penelitian Kemasyarakatan',
-                'Bimbingan Klien Dewasa',
-                'Bimbingan Klien Anak',
-                'Sidang TPP',
-                'Pengawasan & Pengamatan',
-                'LPAS (Lembaga Penempatan)',
-                'Pembebasan Bersyarat',
-                'Layanan Informasi',
-              ].map((s) => (
-                <li key={s} className="text-primary-300 text-sm font-body">
-                  • {s}
+                { label: 'Penelitian Kemasyarakatan (Litmas)', slug: 'penelitian-kemasyarakatan' },
+                { label: 'Bimbingan Klien Dewasa',            slug: 'bimbingan-klien-dewasa' },
+                { label: 'Bimbingan Klien Anak',              slug: 'bimbingan-klien-anak' },
+                { label: 'Sidang Tim Pengamat Pemasyarakatan',slug: 'sidang-tpp' },
+                { label: 'Pengawasan & Pembimbingan',          slug: 'pengawasan-dan-pengamatan' },
+                { label: 'Layanan Integrasi',                 slug: 'integrasi' },
+                { label: 'Konsultasi & Informasi',            slug: 'konsultasi-dan-informasi' },
+              ].map((item) => (
+                <li key={item.slug}>
+                  <Link
+                    to={`/layanan/${item.slug}`}
+                    className="text-primary-300 hover:text-white text-sm font-body transition-colors block hover:translate-x-0.5 transform duration-200"
+                  >
+                    • {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -91,27 +98,29 @@ export default function Footer() {
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 text-gold-400 flex-shrink-0 mt-1" />
                 <p className="text-primary-300 text-sm">
-                  Jl. Dr. Wahidin No. 1, Sintang,<br />
+                  Jl. Dr. Wahidin Sudirohusodo No. 73, Sintang,<br />
                   Kalimantan Barat 78611
                 </p>
               </li>
               <li className="flex gap-3">
                 <Phone className="w-4 h-4 text-gold-400 flex-shrink-0 mt-1" />
                 <a href="tel:+62565XXXXXX" className="text-primary-300 hover:text-white text-sm transition-colors">
-                  (0565) XXX-XXXX
+                  (+62) 82353572234
                 </a>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-4 h-4 text-gold-400 flex-shrink-0 mt-1" />
                 <a href="mailto:bapas.sintang@kemenkumham.go.id" className="text-primary-300 hover:text-white text-sm transition-colors break-all">
-                  bapas.sintang@kemenkumham.go.id
+                  bapas.sintang@kemenimipas.go.id
                 </a>
               </li>
               <li className="flex gap-3">
                 <Clock className="w-4 h-4 text-gold-400 flex-shrink-0 mt-1" />
                 <p className="text-primary-300 text-sm">
-                  Senin – Jumat<br />
-                  08.00 – 16.00 WIB
+                  Senin – Kamis<br />
+                  07.30 – 16.00 WIB<br />
+                  Jumat<br />
+                  07.30 – 16.30 WIB
                 </p>
               </li>
             </ul>
@@ -128,10 +137,10 @@ export default function Footer() {
             </p>
             <div className="flex flex-wrap gap-4">
               {[
-                { label: 'Kemenkumham RI', url: 'https://www.kemenkumham.go.id' },
+                { label: 'Kemenimipas RI', url: 'https://kemenimipas.go.id/' },
                 { label: 'Ditjen PAS',     url: 'https://www.ditjenpas.go.id' },
-                { label: 'PPID Kemenkumham', url: 'https://ppid.kemenkumham.go.id' },
-                { label: 'Kanwil Kalbar',  url: '#' },
+                { label: 'PPID Kemenimipas', url: 'https://ppid.kemenimipas.go.id/' },
+                { label: 'Pemasyarakatan Kalbar',  url: 'https://pemasyarakatankalbar.id/' },
               ].map((link) => (
                 <a
                   key={link.label}
@@ -156,7 +165,7 @@ export default function Footer() {
             © {year} Balai Pemasyarakatan Kelas II Sintang. Hak Cipta Dilindungi.
           </p>
           <p className="text-primary-500 text-xs">
-            Kementerian Hukum dan HAM RI
+            Kementerian Imigrasi dan Pemasyarakatan
           </p>
         </div>
       </div>

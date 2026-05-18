@@ -4,31 +4,35 @@
  */
 export const strukturOrg = {
   kepala: {
-    nama: '[Nama Kepala Bapas]',
-    nip: 'NIP. XXXXXXXXXXXXXXXXXX',
+    nama: 'Muhammad Nasir',
     jabatan: 'Kepala Balai Pemasyarakatan Kelas II Sintang',
     foto: null,
   },
   subBagian: [
     {
-      nama: '[Nama Kasubag]',
+      nama: 'Dayat',
       jabatan: 'Kepala Sub Bagian Tata Usaha',
-      nip: 'NIP. XXXXXXXXXXXXXXXXXX',
       foto: null,
     },
   ],
   seksi: [
     {
-      nama: '[Nama Kasi]',
+      nama: 'Johari Tri Wibowo',
       jabatan: 'Kepala Seksi Bimbingan Klien Dewasa',
-      nip: 'NIP. XXXXXXXXXXXXXXXXXX',
       foto: null,
     },
     {
-      nama: '[Nama Kasi]',
+      nama: 'Liston Aleksander Hutasoit',
       jabatan: 'Kepala Seksi Bimbingan Klien Anak',
-      nip: 'NIP. XXXXXXXXXXXXXXXXXX',
       foto: null,
+    },
+  ],
+  fungsional: [
+    {
+      jabatan: 'Pembimbing Kemasyarakatan',
+    },
+    {
+      jabatan: 'Asisten Pembimbing Kemasyarakatan',
     },
   ],
 }

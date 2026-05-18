@@ -16,20 +16,24 @@ export default function Profil() {
             <div className="title-underline" />
             <div className="prose prose-slate max-w-none text-slate-600 leading-relaxed space-y-4">
               <p>
-                Balai Pemasyarakatan (Bapas) Kelas II Sintang adalah Unit Pelaksana Teknis
-                Pemasyarakatan yang berada di bawah dan bertanggung jawab kepada Kepala Kantor
-                Wilayah Kementerian Hukum dan Hak Asasi Manusia Kalimantan Barat.
+                Balai Pemasyarakatan (Bapas) Kelas II Sintang adalah Unit Pelaksana Teknis (UPT) Pemasyarakatan
+                 yang mengemban tugas pokok dan fungsi dalam memberikan bimbingan kemasyarakatan, pendampingan,
+                 serta pengawasan terhadap Klien Pemasyarakatan. Wilayah kerja Bapas Kelas II Sintang mencakup
+                 lima kabupaten di Kalimantan Barat, yaitu Kabupaten Sintang, Kabupaten Melawi, 
+                 Kabupaten Kapuas Hulu, Kabupaten Sekadau, dan Kabupaten Sanggau.
               </p>
               <p>
-                Bapas Kelas II Sintang memiliki tugas melaksanakan pembimbingan Klien
-                Pemasyarakatan di wilayah Kabupaten Sintang dan sekitarnya.
+                Bapas Kelas II Sintang berkomitmen penuh untuk mengawal seluruh tahapan proses peradilan
+                mulai dari tahap pra-adjudikasi, adjudikasi, hingga pasca-adjudikasi termasuk masa integrasi
+                 seperti Pembebasan Bersyarat (PB), Cuti Bersyarat (CB), dan Asimilasi. 
+                 Hal ini dilakukan demi memastikan penegakan hukum yang humanis, adil, transparan, serta berjalan selaras dengan regulasi yang berlaku.
               </p>
               <p>
                 <strong>Alamat:</strong><br />
                 Jl. Dr. Wahidin No. 1, Sintang, Kalimantan Barat 78611
               </p>
               <p>
-                <strong>Telepon:</strong> (0565) XXX-XXXX<br />
+                <strong>Telepon:</strong> (0565) 23622<br />
                 <strong>Email:</strong> bapas.sintang@kemenkumham.go.id
               </p>
             </div>

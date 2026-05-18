@@ -1,17 +1,11 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-/**
- * Kartu layanan instansi.
- *
- * Props dari data/layanan.js:
- *  - ikon (Lucide component), nama, deskripsi, slug
- */
 export default function LayananCard({ layanan }) {
   const { Ikon, nama, deskripsi, slug } = layanan
 
   return (
-    <div className="card group hover:-translate-y-1 transition-all duration-300 flex flex-col">
+    <div className="card group hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
       {/* Ikon */}
       <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary-600 transition-colors duration-300">
         {Ikon && (
@@ -27,9 +21,9 @@ export default function LayananCard({ layanan }) {
         {deskripsi}
       </p>
 
-      {/* Link */}
+      {/* Link - UPDATE DISINI (Dari /layanan#${slug} menjadi /layanan/${slug}) */}
       <Link
-        to={`/layanan#${slug}`}
+        to={`/layanan/${slug}`}
         className="inline-flex items-center gap-2 text-sm font-heading font-semibold text-primary-600 hover:text-primary-800 transition-colors mt-auto"
       >
         Lihat Detail

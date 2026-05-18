@@ -1,80 +1,70 @@
-import {
-  ClipboardList,
-  Users,
-  Baby,
-  Gavel,
-  Eye,
-  FileText,
-  Shield,
-  Phone,
+import { 
+  ClipboardList, Users, Baby, Gavel, Eye, Shield, FileText, PhoneCall 
 } from 'lucide-react'
 
-/**
- * Data layanan Bapas Kelas II Sintang.
- */
+import { litmasDetail } from './layanan/litmas'
+import { bimbinganDewasaDetail } from './layanan/bimbinganDewasa'
+import { bimbinganAnakDetail } from './layanan/bimbinganAnak'
+import { tppDetail } from './layanan/tpp'
+import { pengawasanDetail } from './layanan/pengawasan'
+import { integrasiDetail } from './layanan/integrasi'
+import { konsultasiDetail } from './layanan/konsultasi'
+
 export const layananList = [
   {
     id: 1,
-    slug: 'litmas',
+    slug: 'penelitian-kemasyarakatan',
+    Ikon: ClipboardList,
     nama: 'Penelitian Kemasyarakatan (Litmas)',
     deskripsi: 'Pengumpulan data sosial klien untuk bahan pertimbangan hakim, lembaga pemasyarakatan, dan instansi terkait.',
-    Ikon: ClipboardList,
-    detail: 'Litmas merupakan kegiatan penelitian untuk mengetahui latar belakang kehidupan warga binaan pemasyarakatan...',
+    ...litmasDetail
   },
   {
     id: 2,
-    slug: 'bimbingan-dewasa',
+    slug: 'bimbingan-klien-dewasa',
+    Ikon: Users,
     nama: 'Bimbingan Klien Dewasa',
     deskripsi: 'Pembimbingan bagi klien dewasa dalam program pembebasan bersyarat, cuti bersyarat, dan cuti menjelang bebas.',
-    Ikon: Users,
-    detail: 'Bimbingan klien dewasa dilakukan oleh Pembimbing Kemasyarakatan (PK) melalui kunjungan dan konseling rutin...',
+    ...bimbinganDewasaDetail
   },
   {
     id: 3,
-    slug: 'bimbingan-anak',
+    slug: 'bimbingan-klien-anak',
+    Ikon: Baby,
     nama: 'Bimbingan Klien Anak',
     deskripsi: 'Pelayanan khusus anak berhadapan dengan hukum (ABH) melalui diversi dan program rehabilitasi sosial.',
-    Ikon: Baby,
-    detail: 'Program bimbingan anak mengutamakan kepentingan terbaik bagi anak dan mengacu pada UU SPPA...',
+    ...bimbinganAnakDetail
   },
   {
     id: 4,
     slug: 'sidang-tpp',
+    Ikon: Gavel,
     nama: 'Sidang Tim Pengamat Pemasyarakatan',
     deskripsi: 'Penyelenggaraan sidang TPP untuk membahas dan merekomendasikan usulan asimilasi, PB, CB, dan CMB.',
-    Ikon: Gavel,
-    detail: 'Sidang TPP dilaksanakan secara berkala dengan melibatkan unsur-unsur dari lembaga pemasyarakatan dan Bapas...',
+    ...tppDetail
   },
   {
     id: 5,
-    slug: 'pengawasan',
-    nama: 'Pengawasan & Pengamatan',
-    deskripsi: 'Monitoring dan pengawasan terhadap klien pemasyarakatan selama menjalani program bimbingan di luar lembaga.',
+    slug: 'pengawasan-dan-pembimbingan',
     Ikon: Eye,
-    detail: 'Pengawasan dilakukan secara rutin untuk memastikan klien mematuhi syarat-syarat yang ditetapkan...',
+    nama: 'Pengawasan & Pembimbingan',
+    deskripsi: 'Monitoring dan pengawasan terhadap klien pemasyarakatan selama menjalani program bimbingan di luar lembaga.',
+    ...pengawasanDetail
   },
   {
     id: 6,
-    slug: 'pembebasan-bersyarat',
-    nama: 'Pembebasan Bersyarat (PB)',
-    deskripsi: 'Proses pengusulan dan pelaksanaan program pembebasan bersyarat bagi narapidana yang memenuhi syarat.',
+    slug: 'integrasi',
     Ikon: Shield,
-    detail: 'Pembebasan bersyarat diberikan setelah narapidana menjalani 2/3 masa pidana dan memenuhi persyaratan...',
-  },
-  {
-    id: 7,
-    slug: 'unduhan-formulir',
-    nama: 'Formulir & Dokumen',
-    deskripsi: 'Unduh berbagai formulir permohonan layanan, blangko, dan dokumen resmi yang diperlukan.',
-    Ikon: FileText,
-    detail: 'Tersedia berbagai formulir yang dapat diunduh untuk kemudahan masyarakat dalam mengakses layanan Bapas...',
+    nama: 'Layanan Integrasi (PB/CB/CMB/Asimilasi)',
+    deskripsi: 'Proses pengusulan dan pelaksanaan program pembebasan bersyarat bagi narapidana yang memenuhi syarat.',
+    ...integrasiDetail
   },
   {
     id: 8,
-    slug: 'konsultasi',
+    slug: 'konsultasi-dan-informasi',
+    Ikon: PhoneCall,
     nama: 'Konsultasi & Informasi',
     deskripsi: 'Layanan konsultasi dan informasi bagi masyarakat, keluarga klien, dan pihak-pihak yang memerlukan.',
-    Ikon: Phone,
-    detail: 'Layanan konsultasi tersedia pada jam kerja dengan menghubungi kantor atau datang langsung...',
-  },
+    ...konsultasiDetail
+  }
 ]

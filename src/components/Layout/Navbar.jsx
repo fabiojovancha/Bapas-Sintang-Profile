@@ -15,14 +15,12 @@ const navItems = [
   { label: 'Layanan',    to: '/layanan' },
   { label: 'Berita',     to: '/berita' },
   { label: 'Galeri',     to: '/galeri' },
-  { label: 'Unduhan',    to: '/unduhan' },
   { label: 'Kontak',     to: '/kontak' },
 ]
 
 export default function Navbar() {
-  const [isOpen,     setIsOpen]     = useState(false)
-  const [scrolled,   setScrolled]   = useState(false)
-  const [dropdown,   setDropdown]   = useState(null)
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -35,8 +33,8 @@ export default function Navbar() {
       {/* Top bar pemerintahan */}
       <div className="bg-primary-900 text-primary-200 text-xs py-1.5 px-4 hidden md:block">
         <div className="container-bapas flex items-center justify-between">
-          <span>Kementerian Hukum dan HAM RI — Kantor Wilayah Kalimantan Barat</span>
-          <span>Hari Kerja: Senin – Jumat, 08.00 – 16.00 WIB</span>
+          <span>Kementerian Imigrasi dan Pemasyarakatan RI — Kantor Wilayah Kalimantan Barat</span>
+          <span>Hari Kerja: Senin – Kamis: 07.30 – 16.00 WIB, Jumat: 07.30 – 16.30 WIB</span>
         </div>
       </div>
 
@@ -53,10 +51,12 @@ export default function Navbar() {
 
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
-                scrolled ? 'bg-primary-600' : 'bg-white/20'
-              }`}>
-                <Shield className={`w-6 h-6 ${scrolled ? 'text-white' : 'text-white'}`} />
+              <div className="flex items-center justify-center flex-shrink-0">
+                <img
+                  src="/bapas_logo.png"
+                  alt="Logo Bapas Sintang"
+                  className="w-14 h-14 object-contain"
+                />
               </div>
               <div>
                 <p className={`font-heading font-bold text-sm leading-tight ${scrolled ? 'text-primary-900' : 'text-white'}`}>
@@ -69,30 +69,28 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop nav */}
-            <ul className="hidden lg:flex items-center gap-1">
+            <ul className="hidden lg:flex items-center gap-1 h-full">
               {navItems.map((item) =>
                 item.children ? (
-                  <li key={item.label} className="relative">
+                  <li key={item.label} className="relative group h-full flex items-center">
                     <button
-                      onMouseEnter={() => setDropdown(item.label)}
-                      onMouseLeave={() => setDropdown(null)}
                       className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-semibold font-heading transition-all ${
                         scrolled
-                          ? 'text-slate-700 hover:text-primary-700 hover:bg-primary-50'
-                          : 'text-white/90 hover:text-white hover:bg-white/10'
+                          ? 'text-slate-700 group-hover:text-primary-700 group-hover:bg-primary-50'
+                          : 'text-white/90 group-hover:text-white group-hover:bg-white/10'
                       }`}
                     >
                       {item.label}
-                      <ChevronDown className={`w-4 h-4 transition-transform ${dropdown === item.label ? 'rotate-180' : ''}`} />
+                      <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
                     </button>
 
-                    {/* Dropdown */}
-                    {dropdown === item.label && (
-                      <div
-                        onMouseEnter={() => setDropdown(item.label)}
-                        onMouseLeave={() => setDropdown(null)}
-                        className="absolute top-full left-0 mt-1 w-52 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-50"
-                      >
+                    {/* Dropdown Menu - Disesuaikan agar mepet */}
+                    <div className="absolute top-[85%] left-0 w-52 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150 z-50">
+                      {/* 
+                        Catatan: top-[85%] akan membuat menu sedikit naik menutupi bagian bawah button 
+                        agar tidak ada celah sama sekali. Jika ingin pas di garis bawah, gunakan top-full.
+                      */}
+                      <div className="bg-white rounded-xl shadow-xl border border-slate-100 py-2 mt-0">
                         {item.children.map((child) => (
                           <NavLink
                             key={child.to}
@@ -109,22 +107,18 @@ export default function Navbar() {
                           </NavLink>
                         ))}
                       </div>
-                    )}
+                    </div>
                   </li>
                 ) : (
-                  <li key={item.to}>
+                  <li key={item.to} className="h-full flex items-center">
                     <NavLink
                       to={item.to}
                       end={item.to === '/'}
                       className={({ isActive }) =>
                         `block px-4 py-2 rounded-lg text-sm font-semibold font-heading transition-all ${
                           isActive
-                            ? scrolled
-                              ? 'text-primary-700 bg-primary-50'
-                              : 'text-white bg-white/20'
-                            : scrolled
-                              ? 'text-slate-700 hover:text-primary-700 hover:bg-primary-50'
-                              : 'text-white/90 hover:text-white hover:bg-white/10'
+                            ? scrolled ? 'text-primary-700 bg-primary-50' : 'text-white bg-white/20'
+                            : scrolled ? 'text-slate-700 hover:text-primary-700 hover:bg-primary-50' : 'text-white/90 hover:text-white hover:bg-white/10'
                         }`
                       }
                     >
@@ -134,7 +128,6 @@ export default function Navbar() {
                 )
               )}
             </ul>
-
             {/* Mobile toggle */}
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -152,12 +145,12 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg">
+          <div className="lg:hidden bg-white border-t border-slate-100 shadow-lg overflow-y-auto max-h-[calc(100vh-80px)]">
             <div className="container-bapas py-4 space-y-1">
               {navItems.map((item) =>
                 item.children ? (
-                  <div key={item.label}>
-                    <p className="px-3 py-1.5 text-xs font-heading font-bold text-slate-400 uppercase tracking-wider mt-3">
+                  <div key={item.label} className="pb-2">
+                    <p className="px-4 py-2 text-xs font-heading font-bold text-slate-400 uppercase tracking-wider mt-2">
                       {item.label}
                     </p>
                     {item.children.map((child) => (
@@ -166,7 +159,7 @@ export default function Navbar() {
                         to={child.to}
                         onClick={() => setIsOpen(false)}
                         className={({ isActive }) =>
-                          `block px-4 py-2.5 rounded-lg text-sm font-heading font-medium transition-colors ${
+                          `block px-6 py-2.5 rounded-lg text-sm font-heading font-medium transition-colors ${
                             isActive
                               ? 'text-primary-700 bg-primary-50'
                               : 'text-slate-700 hover:text-primary-700 hover:bg-slate-50'
