@@ -30,11 +30,11 @@ export default function Profil() {
               </p>
               <p>
                 <strong>Alamat:</strong><br />
-                Jl. Dr. Wahidin No. 1, Sintang, Kalimantan Barat 78611
+                Jl. Dr. Wahidin Sudirohusodo No. 73, Sintang, Kalimantan Barat 78611
               </p>
               <p>
-                <strong>Telepon:</strong> (0565) 23622<br />
-                <strong>Email:</strong> bapas.sintang@kemenkumham.go.id
+                <strong>Telepon:</strong> (+62) 82353572234<br />
+                <strong>Email:</strong> bapas.sintang@kemenimipas.go.id
               </p>
             </div>
           </div>
